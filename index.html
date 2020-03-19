@@ -5,11 +5,87 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 <body>
+	<button id='clickbtn'style="width:300px;height:200px; background-color: #abffcd;">Click me!</button>
+	<div id="hhh" style="visibility: hidden;">
+		
+	</div>
+	
 	<script src="./jquery.min.js"></script>
 	<script>
-		var newwin = window.open();   //此行一定要如此書寫,否則失效
- 		newwin.location= 'https://www.pcstore.com.tw/easydr/M64876641.htm';   // url是 cgi 程式或者超連結 html
+		$(function(){
+			var hrefs = [
+				"https://www.pcstore.com.tw/easydr/M65236721.htm",
+				"https://www.pcstore.com.tw/easydr/M65469529.htm",
+				"https://www.pcstore.com.tw/easydr/M65468511.htm",
+				"https://www.pcstore.com.tw/easydr/M64900911.htm",
+				"https://www.pcstore.com.tw/easydr/M65397824.htm",
+				"https://www.pcstore.com.tw/easydr/M64901157.htm",
+				"https://www.pcstore.com.tw/easydr/M65385274.htm",
+				"https://www.pcstore.com.tw/easydr/M64876641.htm",
+				"https://www.pcstore.com.tw/easydr/M64901099.htm",
+				"https://www.pcstore.com.tw/easydr/M65474449.htm"
+			];
 
+			var str = "";
+			for(var i=0;i<10;i++){
+				str += "<a id='href"+i+"' type='button' href='"+hrefs[i]+"' target='_blank'>href"+i+"</a>";
+			}
+			document.getElementById("hhh").innerHTML = str;
+		});
+			
+
+ 		$("#clickbtn").click(()=>{
+ 			var delay = function(s){
+			  return new Promise(function(resolve,reject){
+			   setTimeout(resolve,s); 
+			  });
+			};
+			var flag=0;
+			delay().then(function(){
+				console.log(1); 
+				clickLink(flag);
+				flag++;
+				return delay(1000); 
+			}).then(function(){
+				clickLink(flag);
+				flag++;
+				return delay(1000); 
+			}).then(function(){
+				clickLink(flag);
+				flag++;
+				return delay(1000); 
+			}).then(function(){
+				clickLink(flag);
+				flag++;
+				return delay(1000); 
+			}).then(function(){
+				clickLink(flag);
+				flag++;
+				return delay(1000); 
+			}).then(function(){
+				clickLink(flag);
+				flag++;
+				return delay(1000); 
+			}).then(function(){
+				clickLink(flag);
+				flag++;
+				return delay(1000); 
+			}).then(function(){
+				clickLink(flag);
+				flag++;
+				return delay(1000); 
+			}).then(function(){
+				clickLink(flag);
+				flag++;
+				return delay(1000); 
+			}).then(function(){
+				clickLink(flag);
+			});
+ 		});
+
+ 		function clickLink(a){
+			$("#href"+a)[0].click();
+ 		}
 
 	</script>
 </body>
